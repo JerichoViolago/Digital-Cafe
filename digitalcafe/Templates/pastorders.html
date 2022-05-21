@@ -1,0 +1,17 @@
+{% include "header.html" %}
+        <h1>Past Orders</h1>
+        <table>
+            <tr>
+              <!-- <th>Date and Time</th> -->
+              <th>Code</th><th>Name</th><th>Quantity</th><th>Subtotal</th></tr>
+            {% for pastorder in pastorder_list %}
+              <tr>
+                  <!-- <td>{{pastorder["orderdate"]}}</td> -->
+                  <td>{{pastorder["code"]}}</td>
+                  <td>{{pastorder["name"]}}</td>
+                  <td>{{pastorder["qty"]}}</td>
+                  <td>{{pastorder["subtotal"]|round}}</td>
+              </tr>
+            {% endfor %}
+        </table>
+{% include "footer.html" %}

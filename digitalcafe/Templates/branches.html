@@ -1,0 +1,15 @@
+
+{% include "header.html" %}
+    <h1>Branches</h1>
+    <table>
+        <tr><th>Code</th><th>Location</th></tr>
+        <tr><th>1</th><th>Katipunan</th></tr>
+        <tr><th>2</th><th>Tomas Morato</th></tr>
+        <tr><th>3</th><th>Eastwood</th></tr>
+        <tr><th>4</th><th>Tiendesitas</th></tr>
+        <tr><th>5</th><th>Arcovia</th></tr>
+        {% for branches in branches_list %}
+                    <tr><td><a href="branchdetails?code={{branches["code"]}}">{{branches["code"]}}</a></td><td>{{branches["Location"]}}</td></tr>
+        {% endfor %}
+    </table>
+{% include "footer.html" %}

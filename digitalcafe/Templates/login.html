@@ -1,0 +1,19 @@
+{% include "header.html" %}
+<h1>Login</h1>
+<form action="/auth" method="POST">
+   <div>
+     Username or email address
+   </div>
+   <input type="text" name="username" required></input>
+   <div>
+     Password
+   </div>
+   <input type="password" name="password" required></input>
+   <div>
+   <input type="submit" value="Login"/>
+   </div>
+   {% if session["auth_error"] %}
+   <div>Invalid Username/Password</div>
+   {% endif %}
+</form>
+{% include "footer.html" %}
